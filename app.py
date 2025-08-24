@@ -1,6 +1,8 @@
 """
 Systems Mapping App (Streamlit + PyVis)
 
+https://systems-mapping-smyn4n4k3u99vigr9mypsj.streamlit.app/
+
 Purpose: Web app to support OVW TA Initiative Purpose Area 18-style workshops
 (SART-focused systems mapping for sexual assault response) with a simple, appealing UI.
 
@@ -29,6 +31,12 @@ from typing import Dict, List, Tuple
 
 import pandas as pd
 import streamlit as st
+PASS = st.secrets.get("APP_PASSCODE")
+if PASS:
+    st.markdown("#### Enter access code")
+    code = st.text_input("Access code", type="password")
+    if code != PASS:
+        st.stop()  # stop the app here until correct password
 from pyvis.network import Network
 import networkx as nx
 
