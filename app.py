@@ -46,7 +46,7 @@ if not st.session_state.authenticated:
     else:
         st.stop()
 
-Logout button in sidebar
+# Logout button in sidebar
 if st.session_state.authenticated:
     if st.sidebar.button("🔒 Logout"):
         st.session_state.authenticated = False
@@ -409,4 +409,5 @@ with etab:
 
 # Footer
 st.caption("© Systems mapping prototype for OVW TA workshops (PA18). This tool does not collect identifying information and is intended for facilitated group use.")
+
 
