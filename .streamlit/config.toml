@@ -1,0 +1,4 @@
+[server]
+headless = true
+enableXsrfProtection = true
+maxUploadSize = 200
