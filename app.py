@@ -31,31 +31,36 @@ from typing import Dict, List, Tuple
 
 import pandas as pd
 import streamlit as st
-# --- Password Gate (version-safe rerun) ---
+# --- Password Gate (version-safe, no lingering prompt) ---
 if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
 
 PASS = st.secrets.get("APP_PASSCODE")
 
 def _rerun():
-    # Works on Streamlit >= 1.27 (st.rerun) and older (experimental_rerun)
-    getattr(st, "rerun", getattr(st, "experimental_rerun"))()
+    # Streamlit changed API: use st.rerun if present, else experimental_rerun.
+    if hasattr(st, "rerun"):
+        st.rerun()
+    elif hasattr(st, "experimental_rerun"):
+        st.experimental_rerun()
+    else:
+        # Worst case: ask user to refresh; do NOT crash.
+        st.info("Authenticated. Please refresh the page.")
+        st.stop()
 
 if not st.session_state.authenticated:
     st.markdown("### Enter Password")
     code = st.text_input("Access code", type="password")
-    # Only check if user typed something
-    if code:
-        if code == PASS:
-            st.session_state.authenticated = True
-            _rerun()  # hide the prompt after success
-        else:
-            st.error("Incorrect code.")
-            st.stop()
+    if not code:
+        st.stop()
+    if code == PASS:
+        st.session_state.authenticated = True
+        _rerun()  # hides the prompt after success
     else:
+        st.error("Incorrect code.")
         st.stop()
 
-# Optional: logout
+# Optional: logout button
 if st.session_state.authenticated:
     if st.sidebar.button("🔒 Logout"):
         st.session_state.authenticated = False
@@ -418,6 +423,7 @@ with etab:
 
 # Footer
 st.caption("© Systems mapping prototype for OVW TA workshops (PA18). This tool does not collect identifying information and is intended for facilitated group use.")
+
 
 
 
