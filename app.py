@@ -31,12 +31,26 @@ from typing import Dict, List, Tuple
 
 import pandas as pd
 import streamlit as st
+# --- Password Gate ---
+if "authenticated" not in st.session_state:
+    st.session_state.authenticated = False
+
 PASS = st.secrets.get("APP_PASSCODE")
-if PASS:
-    st.markdown("#### Enter access code")
+
+if not st.session_state.authenticated:
+    st.markdown("#### Enter Password")
     code = st.text_input("Access code", type="password")
-    if code != PASS:
-        st.stop()  # stop the app here until correct password
+    if code == PASS:
+        st.session_state.authenticated = True
+        st.experimental_rerun()
+    else:
+        st.stop()
+
+Logout button in sidebar
+if st.session_state.authenticated:
+    if st.sidebar.button("🔒 Logout"):
+        st.session_state.authenticated = False
+        st.experimental_rerun()
 from pyvis.network import Network
 import networkx as nx
 
@@ -395,3 +409,4 @@ with etab:
 
 # Footer
 st.caption("© Systems mapping prototype for OVW TA workshops (PA18). This tool does not collect identifying information and is intended for facilitated group use.")
+
