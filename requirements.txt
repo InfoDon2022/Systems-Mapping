@@ -1,0 +1,18 @@
+# Core app framework
+streamlit>=1.34.0
+
+# Data handling
+pandas>=2.0
+openpyxl>=3.1   # for Excel read/write
+
+# Graph/network analysis
+networkx>=3.0
+
+# Visualization
+plotly>=5.20
+
+# Fuzzy matching (used in vignette matching)
+rapidfuzz>=3.0
+
+# JSON schema validation (optional but useful for checking vignettes)
+jsonschema>=4.0
