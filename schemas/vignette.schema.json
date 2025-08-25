@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "OVW Gap Mapper Vignettes",
+  "type": "object",
+  "required": ["vignettes"],
+  "properties": {
+    "version": {
+      "type": ["string", "number"]
+    },
+    "vignettes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "persona", "scenario"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "persona": {
+            "type": "string"
+          },
+          "scenario": {
+            "type": "string"
+          },
+          "system_type": {
+            "type": ["string", "null"]
+          },
+          "geography": {
+            "type": ["string", "null"]
+          },
+          "goals": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "barriers": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "preferred_path": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "observed_path": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "metadata": {
+            "type": "object",
+            "additionalProperties": true
+          }
+
