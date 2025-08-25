@@ -16,6 +16,13 @@ import networkx as nx
 import plotly.graph_objects as go
 import streamlit as st
 
+# Add this near your other imports
+try:
+    from jsonschema import Draft7Validator
+    _HAS_JSONSCHEMA = True
+except Exception:
+    _HAS_JSONSCHEMA = False
+
 from build_graph import build_graph, load_taxonomy, load_settings, compute_metrics
 from utils.geo import haversine_miles
 from utils.vignettes import simulate_vignette
@@ -94,7 +101,40 @@ nodes_df = pd.read_csv(nodes_file) if nodes_file else _read_default_csv("nodes_t
 edges_df = pd.read_csv(edges_file) if edges_file else _read_default_csv("edges_template.csv")
 taxonomy = json.load(taxonomy_file) if taxonomy_file else _read_default_json("taxonomy_template.json")
 settings = json.load(settings_file) if settings_file else _read_default_json("settings_template.json")
-vignettes_payload = json.load(vignettes_file) if vignettes_file else _read_default_json("vignettes_template.json")
+# --- Vignettes: load + (optional) schema validation ---
+# If user uploads a file, we use it; otherwise we fall back to the template
+if vignettes_file:
+    vignettes_payload = json.load(vignettes_file)
+else:
+    vignettes_payload = json.loads((default_dir / "vignettes_template.json").read_text(encoding="utf-8"))
+
+# Try to validate with JSON Schema if available
+schema_path = Path("schemas/vignette.schema.json")
+if schema_path.exists():
+    if not _HAS_JSONSCHEMA:
+        st.info(
+            "Vignette schema found, but `jsonschema` is not installed. "
+            "Add `jsonschema>=4.0` to requirements.txt to enable validation."
+        )
+    else:
+        try:
+            schema = json.loads(schema_path.read_text(encoding="utf-8"))
+            validator = Draft7Validator(schema)
+            errors = sorted(validator.iter_errors(vignettes_payload), key=lambda e: e.path)
+            if errors:
+                st.error("Uploaded vignettes JSON is invalid per schema. See details below.")
+                # Render readable error paths (e.g., vignettes[0].title)
+                for err in errors:
+                    path = "root"
+                    for p in err.path:
+                        path += f"[{p}]" if isinstance(p, int) else f".{p}"
+                    st.write(f"- **{path}**: {err.message}")
+                st.stop()
+        except Exception as e:
+            st.warning(f"Schema validation skipped due to an error: {e}")
+else:
+    # No schema file present—continue without validation
+    pass
 
 # Basic validation hints
 required_node_cols = {"node_id", "label", "system_type"}
