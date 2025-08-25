@@ -159,11 +159,16 @@ metrics_df = compute_metrics(G)
 system_types = taxonomy.get("system_types", [])
 with st.sidebar:
     st.subheader("Lenses")
-    selected_types = st.multiselect(
-        "Show system types",
-        options=system_types,
-        default=system_types or list(nodes_df["system_type"].dropna().unique())
-    )
+# Clean up whitespace and make sure system_type is a string
+nodes_df["system_type"] = nodes_df["system_type"].astype(str).str.strip()
+
+system_types = sorted(nodes_df["system_type"].dropna().unique().tolist())
+
+selected_types = st.multiselect(
+    "Show system types",
+    options=system_types,
+    default=system_types  # Default is “everything that exists” in the CSV
+)
     lens = st.radio(
         "View",
         options=["By System Type", "By Referral Strength", "By Geography"],
@@ -315,3 +320,4 @@ st.download_button(
 )
 
 st.caption("Tip: Edit taxonomy & thresholds in JSON templates. Upload CSVs or use the defaults in `data/templates`.")
+
