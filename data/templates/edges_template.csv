@@ -1,4 +1,4 @@
-source,target,relationship
+from_id,to_id,relationship
 1,2,discloses_to
 2,3,refers_to
 3,4,connects_to
