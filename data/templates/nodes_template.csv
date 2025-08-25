@@ -1,1 +1,13 @@
-data coming
+id,label,type
+1,Survivor,Individual
+2,Teacher,Education
+3,CPS,System
+4,Advocacy Org,Service
+5,Court,Justice
+6,Chaplain,Faith
+7,Military Police,Law Enforcement
+8,Tribal Advocate,Service
+9,Regional Hospital,Healthcare
+10,Interpreter Service,Language Access
+11,SANE Program,Healthcare
+12,Hotline,Service
