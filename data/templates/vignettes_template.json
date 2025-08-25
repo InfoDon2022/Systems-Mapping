@@ -1,0 +1,200 @@
+{
+  "version": "1.1",
+  "vignettes": [
+    {
+      "id": "vig_001",
+      "title": "Adult survivor seeks exam and advocacy",
+      "persona": "Adult survivor in rural county, limited transportation",
+      "scenario": "Following an assault, the survivor first contacts 9-1-1, then is transported to a hospital for a forensic exam and wishes to connect with advocacy and safety planning.",
+      "system_type": "Healthcare",
+      "geography": "Rural",
+      "goals": [
+        "Access forensic exam within time window",
+        "Connect with advocacy for safety planning",
+        "Receive information about reporting options"
+      ],
+      "barriers": [
+        "Long distance to SANE site",
+        "Limited after-hours transportation"
+      ],
+      "preferred_path": [
+        "Law Enforcement",
+        "Forensic/SANE",
+        "Advocacy",
+        "Legal Aid/Civil"
+      ],
+      "observed_path": [
+        "Law Enforcement",
+        "Healthcare",
+        "Advocacy"
+      ],
+      "metadata": {
+        "notes": "Labels in preferred/observed may be system types or node labels. Fuzzy matching will attempt to resolve."
+      }
+    },
+    {
+      "id": "vig_002",
+      "title": "Campus survivor requests confidential support",
+      "persona": "Undergraduate student, international, LEP",
+      "scenario": "Student discloses to a campus counselor and wants confidential advocacy and medical care without immediate police involvement.",
+      "system_type": "Campus",
+      "geography": "Town",
+      "goals": [
+        "Confidential advocacy",
+        "Medical care",
+        "Interpreter support"
+      ],
+      "barriers": [
+        "Fear of disciplinary process",
+        "Language access"
+      ],
+      "preferred_path": [
+        "Campus Counseling Center",
+        "Campus Advocacy Program",
+        "Healthcare"
+      ],
+      "observed_path": [
+        "Campus Counseling Center",
+        "Healthcare"
+      ],
+      "metadata": {
+        "language": "Spanish"
+      }
+    },
+    {
+      "id": "vig_003",
+      "title": "Military spouse survivor discloses to chaplain",
+      "persona": "Spouse of active-duty service member living near base housing",
+      "scenario": "After a violent incident at home, the survivor seeks help from a base chaplain, leading to engagement with military police and a warm handoff to civilian/military-connected advocacy.",
+      "system_type": "Tribal Government/Programs",
+      "geography": "Town",
+      "goals": [
+        "Confidential initial disclosure",
+        "Safety planning",
+        "Connection to advocacy and legal options across military/civilian systems"
+      ],
+      "barriers": [
+        "Concern about impact on service member's career",
+        "Uncertainty about jurisdiction (military vs. civilian)",
+        "Childcare and transportation"
+      ],
+      "preferred_path": [
+        "Chaplain",
+        "Military Police",
+        "Advocacy",
+        "Legal Aid/Civil"
+      ],
+      "observed_path": [
+        "Chaplain",
+        "Military Police",
+        "Advocacy"
+      ],
+      "metadata": {
+        "notes": "Local implementations may model 'Chaplain' as a node label under Faith-Based Org or a specific base resource.",
+        "children_in_home": true
+      }
+    },
+    {
+      "id": "vig_004",
+      "title": "Teen in foster care discloses at school",
+      "persona": "16-year-old in foster placement",
+      "scenario": "Teen discloses to a trusted teacher; a report is made and CPS engages. The teen needs a CAC exam, advocacy, and court accompaniment.",
+      "system_type": "Child/Youth Services",
+      "geography": "Town",
+      "goals": [
+        "Child Advocacy Center exam",
+        "Consistent advocacy through legal process",
+        "Stabilize placement and safety plan"
+      ],
+      "barriers": [
+        "Transport coordination to CAC",
+        "Placement instability",
+        "Missed school impacts"
+      ],
+      "preferred_path": [
+        "School Personnel",
+        "CPS",
+        "Child Advocacy Center",
+        "Advocacy",
+        "Courts"
+      ],
+      "observed_path": [
+        "School Personnel",
+        "CPS",
+        "Courts"
+      ],
+      "metadata": {
+        "education_disruption_risk": "moderate",
+        "requires_guardian_consent": true
+      }
+    },
+    {
+      "id": "vig_005",
+      "title": "Tribal community survivor seeks care and legal follow-up",
+      "persona": "Adult survivor residing in Tribal community",
+      "scenario": "Survivor first contacts a Tribal advocate; transportation is needed to the nearest regional hospital for a forensic exam; cross-jurisdictional legal follow-up required.",
+      "system_type": "Tribal Government/Programs",
+      "geography": "Rural",
+      "goals": [
+        "Immediate advocacy and safety planning",
+        "Timely forensic exam",
+        "Jurisdiction-appropriate legal response"
+      ],
+      "barriers": [
+        "Distance to regional hospital",
+        "Jurisdictional complexity",
+        "Limited after-hours transport"
+      ],
+      "preferred_path": [
+        "Tribal Advocate",
+        "Transportation",
+        "Forensic/SANE",
+        "Prosecution",
+        "Courts"
+      ],
+      "observed_path": [
+        "Tribal Advocate",
+        "Transportation",
+        "Healthcare"
+      ],
+      "metadata": {
+        "estimated_miles_to_exam": 75,
+        "cross_deputization_MOU_in_place": false
+      }
+    },
+    {
+      "id": "vig_006",
+      "title": "Non-English speaker in rural area needs SANE access",
+      "persona": "Adult survivor, LEP, limited transportation",
+      "scenario": "Survivor calls a regional hotline; an interpreter is engaged; survivor is connected to nearest SANE program for an exam and advocacy follow-up.",
+      "system_type": "Hotline/Navigation",
+      "geography": "Rural",
+      "goals": [
+        "Immediate language access",
+        "Forensic exam within time window",
+        "Advocacy and safety planning"
+      ],
+      "barriers": [
+        "Interpreter availability after hours",
+        "Long distance to SANE site",
+        "No personal vehicle"
+      ],
+      "preferred_path": [
+        "Hotline/Navigation",
+        "Interpreter/Language Access",
+        "Transportation",
+        "Forensic/SANE",
+        "Advocacy"
+      ],
+      "observed_path": [
+        "Hotline/Navigation",
+        "Interpreter/Language Access",
+        "Healthcare"
+      ],
+      "metadata": {
+        "language": "Spanish",
+        "needs_ride_share_voucher": true
+      }
+    }
+  ]
+}

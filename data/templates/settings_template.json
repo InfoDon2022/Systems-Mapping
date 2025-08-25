@@ -1,0 +1,20 @@
+{
+  "geography": {
+    "default_rural_threshold_miles": 30
+  },
+  "service_thresholds_miles": {
+    "forensic_exam": 60,
+    "advocacy": 40,
+    "counseling": 40,
+    "shelter": 50,
+    "legal": 60
+  },
+  "vignette_matching": {
+    "min_score": 70
+  },
+  "ui": {
+    "default_lens": "By System Type",
+    "node_label_attr": "label",
+    "show_metrics": true
+  }
+}

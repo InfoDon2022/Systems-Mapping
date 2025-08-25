@@ -1,0 +1,50 @@
+{
+  "system_types": [
+    "Advocacy",
+    "Law Enforcement",
+    "Prosecution",
+    "Courts",
+    "Healthcare",
+    "Forensic/SANE",
+    "Behavioral Health",
+    "Housing/Shelter",
+    "Campus",
+    "Community-Based Org",
+    "Child/Youth Services",
+    "Corrections/Probation/Parole",
+    "Legal Aid/Civil",
+    "Tribal Government/Programs",
+    "Faith-Based Org",
+    "Hotline/Navigation",
+    "Transportation",
+    "Interpreter/Language Access",
+    "Other"
+  ],
+  "synonyms": {
+    "Law Enforcement": ["Police", "Sheriff", "PD", "Constable", "State Police"],
+    "Prosecution": ["DA", "District Attorney", "Prosecutor", "County Attorney", "City Attorney"],
+    "Courts": ["Court", "Family Court", "Municipal Court", "Magistrate", "Tribal Court"],
+    "Forensic/SANE": ["SANE", "SAFE", "Forensic Nurse", "Forensic Examiner", "SART Hospital"],
+    "Healthcare": ["Hospital", "Clinic", "ED", "ER", "Health Center"],
+    "Behavioral Health": ["Mental Health", "Counseling", "Substance Use", "Substance Abuse", "Therapy"],
+    "Housing/Shelter": ["Shelter", "Transitional Housing", "DV Shelter", "Emergency Housing"],
+    "Advocacy": ["Rape Crisis", "DV Program", "Victim Services", "Victim Advocate", "Coalition"],
+    "Community-Based Org": ["CBO", "Nonprofit", "Community Partner"],
+    "Child/Youth Services": ["CPS", "Child Protective Services", "Youth Program", "CAC", "Children's Advocacy Center"],
+    "Corrections/Probation/Parole": ["Probation", "Parole", "Jail", "Prison", "DOC", "Community Corrections"],
+    "Legal Aid/Civil": ["Legal Aid", "Civil Legal", "Legal Services", "Victim Legal"],
+    "Tribal Government/Programs": ["Tribal Program", "Tribal Gov", "Village Public Safety Officer", "VPSO"],
+    "Faith-Based Org": ["Church", "Synagogue", "Mosque", "Temple", "Faith Partner"],
+    "Hotline/Navigation": ["Hotline", "2-1-1", "Navigation", "Navigator"],
+    "Transportation": ["Transit", "Taxi", "Ride Share", "Van Service"],
+    "Interpreter/Language Access": ["Interpreter", "Language Services", "LEP Support"]
+  },
+  "relationship_types": [
+    "referral",
+    "warm_transfer",
+    "information_share",
+    "follow_up",
+    "MOU",
+    "funding_flow"
+  ]
+}
