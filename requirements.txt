@@ -1,5 +1,0 @@
-streamlit
-pyvis
-pandas
-openpyxl
-networkx
