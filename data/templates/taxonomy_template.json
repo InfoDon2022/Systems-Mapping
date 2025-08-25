@@ -1,24 +1,15 @@
 {
-  "system_types": [
-    "Advocacy",
-    "Law Enforcement",
-    "Prosecution",
-    "Courts",
-    "Healthcare",
-    "Forensic/SANE",
-    "Behavioral Health",
-    "Housing/Shelter",
-    "Campus",
-    "Community-Based Org",
-    "Child/Youth Services",
-    "Corrections/Probation/Parole",
-    "Legal Aid/Civil",
-    "Tribal Government/Programs",
-    "Faith-Based Org",
-    "Hotline/Navigation",
-    "Transportation",
-    "Interpreter/Language Access",
-    "Other"
+  "systems": [
+    { "key": "Individual",         "color": "#666666" },
+    { "key": "Education",          "color": "#FF9900" },
+    { "key": "System",             "color": "#999999" },
+    { "key": "Service",            "color": "#1F77B4" },
+    { "key": "Justice",            "color": "#8C564B" },
+    { "key": "Faith",              "color": "#9467BD" },
+    { "key": "Law Enforcement",    "color": "#B5651D" },
+    { "key": "Healthcare",         "color": "#2CA02C" },
+    { "key": "Language Access",    "color": "#17BECF" },
+    { "key": "Hotline/Navigation", "color": "#7F7F7F" }
   ],
   "synonyms": {
     "Law Enforcement": ["Police", "Sheriff", "PD", "Constable", "State Police"],
@@ -48,3 +39,4 @@
     "funding_flow"
   ]
 }
+
