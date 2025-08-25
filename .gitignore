@@ -1,0 +1,30 @@
+# Ignore Python cache and compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore local environment files
+.env
+.venv/
+env/
+venv/
+ENV/
+
+# Ignore Streamlit secrets (keep them private)
+.streamlit/secrets.toml
+
+# Ignore OS-specific junk
+.DS_Store
+Thumbs.db
+
+# Ignore exports or local scratch data
+exports/
+*.xlsx
+*.csv
+
+# (Optional) If you have large test data sets, add their folder here
+# data/raw/
