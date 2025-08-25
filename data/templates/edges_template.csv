@@ -1,0 +1,14 @@
+source,target,relationship
+1,2,discloses_to
+2,3,refers_to
+3,4,connects_to
+4,5,legal_followup
+1,6,discloses_to
+6,7,refers_to
+7,4,connects_to
+1,8,contacts
+8,9,refers_to
+9,5,legal_followup
+1,12,calls
+12,10,connects_to
+10,11,refers_to
