@@ -464,9 +464,7 @@ with st.sidebar.expander("Add Edge", expanded=False):
 with st.sidebar.expander("Performance Dashboard", expanded=False):
     st.markdown("### County Performance Assessment")
     st.caption(
-        "Enter the current count for each measure below.  The app will
-        compare your county’s progress against the statewide targets from
-        Vermont’s suicide prevention plan and assign a color‑coded grade."
+        "Enter the current count for each measure below.  The app will compare your county’s progress against the statewide targets from Vermont’s suicide prevention plan and assign a color‑coded grade."
     )
     # Initialize performance values in session state
     if "performance_values" not in st.session_state:
