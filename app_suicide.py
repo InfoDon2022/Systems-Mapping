@@ -42,93 +42,57 @@ import streamlit as st
 VIGNETTES: Dict[str, Dict[str, str]] = {
     "Community Prevention & Awareness": {
         "Youth Outreach": (
-            "A high‑school counselor notices a student withdrawing from peers and
-            missing classes.  The counselor engages school mental health staff
-            and reaches out to community youth programs to coordinate support."
+            "A high-school counselor notices a student withdrawing from peers and missing classes. The counselor engages school mental health staff and reaches out to community youth programs to coordinate support."
         ),
         "Rural Isolation": (
-            "A middle‑aged farmer living in a remote area tells their primary
-            care provider about loneliness and suicidal thoughts.  Local
-            volunteers, telehealth providers and a peer support group work
-            together to offer connection and resources."
+            "A middle-aged farmer living in a remote area tells their primary care provider about loneliness and suicidal thoughts. Local volunteers, telehealth providers and a peer support group work together to offer connection and resources."
         ),
         "Media Messaging": (
-            "After a news story about suicide uses stigmatizing language,
-            community partners collaborate to train media outlets in
-            responsible messaging and share guidelines for reporting."
+            "After a news story about suicide uses stigmatizing language, community partners collaborate to train media outlets in responsible messaging and share guidelines for reporting."
         ),
     },
     "Treatment & Crisis Services": {
         "Emergency Department Referral": (
-            "An individual presents at the emergency department following a
-            suicide attempt.  Hospital staff coordinate a warm hand‑off to
-            mobile crisis clinicians and arrange follow‑up with a community
-            mental health agency."
+            "An individual presents at the emergency department following a suicide attempt. Hospital staff coordinate a warm hand-off to mobile crisis clinicians and arrange follow-up with a community mental health agency."
         ),
         "Crisis Line Coordination": (
-            "The 988 Suicide & Crisis Lifeline receives a call from someone in
-            acute crisis.  The lifeline counselor dispatches a mobile crisis
-            team and notifies a local peer support center for follow‑up."
+            "The 988 Suicide & Crisis Lifeline receives a call from someone in acute crisis. The lifeline counselor dispatches a mobile crisis team and notifies a local peer support center for follow-up."
         ),
         "Inpatient to Outpatient Transition": (
-            "A patient discharged from inpatient psychiatric care needs a
-            coordinated step‑down plan.  The hospital, outpatient therapist
-            and peer warm‑line collaborate to ensure safety planning and
-            continuity of care."
+            "A patient discharged from inpatient psychiatric care needs a coordinated step-down plan. The hospital, outpatient therapist and peer warm-line collaborate to ensure safety planning and continuity of care."
         ),
     },
     "Postvention & Recovery": {
         "School Postvention": (
-            "Following the suicide of a student, the school district activates
-            its postvention protocol.  Crisis counselors, faith leaders and
-            youth peer mentors offer support groups and debriefings to
-            students, staff and families."
+            "Following the suicide of a student, the school district activates its postvention protocol. Crisis counselors, faith leaders and youth peer mentors offer support groups and debriefings to students, staff and families."
         ),
         "Workplace Postvention": (
-            "An employee dies by suicide.  The employer partners with
-            community mental health providers to offer crisis debriefings,
-            counseling and referrals for staff, while HR reviews policies
-            related to leave and accommodations."
+            "An employee dies by suicide. The employer partners with community mental health providers to offer crisis debriefings, counseling and referrals for staff, while HR reviews policies related to leave and accommodations."
         ),
         "Loss Survivor Support": (
-            "A bereaved family seeks help after losing a loved one to suicide.
-            Local support groups, grief counselors and faith‑based
-            organizations coordinate wrap‑around care and connection to
-            resources."
+            "A bereaved family seeks help after losing a loved one to suicide. Local support groups, grief counselors and faith-based organizations coordinate wrap-around care and connection to resources."
         ),
     },
     "Data, Quality & Research": {
         "Data Reporting": (
-            "County agencies compile suicide attempt and death data to submit
-            to the statewide surveillance system.  Partners discuss how to
-            improve data completeness and timeliness."
+            "County agencies compile suicide attempt and death data to submit to the statewide surveillance system. Partners discuss how to improve data completeness and timeliness."
         ),
         "Research Partnership": (
-            "A university researcher studies risk factors for suicide among
-            Vermont residents.  Findings are presented to service providers
-            and inform new program designs."
+            "A university researcher studies risk factors for suicide among Vermont residents. Findings are presented to service providers and inform new program designs."
         ),
         "Quality Improvement": (
-            "A crisis response program reviews follow‑up call outcomes and
-            identifies process improvements to increase engagement and
-            satisfaction."
+            "A crisis response program reviews follow-up call outcomes and identifies process improvements to increase engagement and satisfaction."
         ),
     },
     "Equity & Inclusion": {
         "LGBTQ+ Youth Safe Spaces": (
-            "A youth center launches safe‑space programming for LGBTQ+
-            adolescents.  The center collaborates with schools, parents and
-            mental health providers to ensure inclusive, affirming support."
+            "A youth center launches safe-space programming for LGBTQ+ adolescents. The center collaborates with schools, parents and mental health providers to ensure inclusive, affirming support."
         ),
         "Indigenous & BIPOC Communities": (
-            "Tribal leaders and BIPOC community organizers adapt suicide
-            prevention materials to be culturally resonant and co‑facilitate
-            outreach events."
+            "Tribal leaders and BIPOC community organizers adapt suicide prevention materials to be culturally resonant and co-facilitate outreach events."
         ),
         "Disability Access": (
-            "Partners collaborate with the Vermont Center for the Deaf and Hard
-            of Hearing to ensure crisis hotlines and services are accessible
-            via text, video relay and other accommodations."
+            "Partners collaborate with the Vermont Center for the Deaf and Hard of Hearing to ensure crisis hotlines and services are accessible via text, video relay and other accommodations."
         ),
     },
 }
