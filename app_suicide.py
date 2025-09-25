@@ -378,6 +378,31 @@ def grade_measure(value: float, target: float) -> str:
 
 # ------------------------- PAGE CONFIG -------------------------
 st.set_page_config(page_title="Systems Mapping – VT Suicide Prevention", layout="wide")
+# ── Strategraph branding (sidebar) ─────────────────────────────────────────────
+from pathlib import Path
+
+# Prefer the name logo; try common extensions just in case
+_LOGO_CANDIDATES = [
+    "assets/logo_transparent_background.png",
+    "assets/logo_transparent_background.jpg",
+    "assets/logo_transparent_background.jpeg",
+    "assets/logo_transparent_background.svg",
+]
+
+_LOGO_PATH = next((p for p in _LOGO_CANDIDATES if Path(p).exists()), None)
+
+with st.sidebar:
+    if _LOGO_PATH:
+        st.image(_LOGO_PATH, use_container_width=True)
+    # Optional caption under the image
+    st.markdown(
+        "<div style='text-align:center; font-weight:600; letter-spacing:0.06em; margin-top:4px;'>STRATEGRAPH&nbsp;LLC</div>",
+        unsafe_allow_html=True,
+    )
+
+# If you previously injected a header logo (top-right), disable or remove it.
+# A quick switch you can use:
+SHOW_HEADER_BRANDING = False
 st.markdown(
     """
     <style>
@@ -528,7 +553,7 @@ with st.sidebar.expander("Performance Dashboard", expanded=False):
 # ------------------------- MAIN LAYOUT -------------------------
 st.markdown("# Vermont Suicide Prevention Systems Map")
 st.markdown(
-    "This tool helps counties visualise their local suicide prevention systems, explore scenario vignettes, and assess performance against the state’s strategic measures."
+    "A strategic visualization tool for local suicide prevention systems"
 )
 
 # Legend
