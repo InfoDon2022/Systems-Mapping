@@ -464,13 +464,19 @@ with st.sidebar.expander("Add Edge", expanded=False):
     if not nodes_df_for_edge.empty:
         id_to_label = {int(r["id"]): str(r["label"]) for _, r in nodes_df_for_edge.iterrows()}
         node_ids = list(id_to_label.keys())
-        frm = st.selectbox("From", node_ids, key="edge_from", format_func=lambda i: id_to_label.get(i, str(i)))
-        to = st.selectbox("To", node_ids, key="edge_to", format_func=lambda i: id_to_label.get(i, str(i)))
+
+        frm = st.selectbox("From", node_ids, key="edge_from",
+                           format_func=lambda i: id_to_label.get(i, str(i)))
+        to = st.selectbox("To", node_ids, key="edge_to",
+                          format_func=lambda i: id_to_label.get(i, str(i)))
+
         if st.button("➕ Add Edge"):
             edges_df = st.session_state.edges
             new_eid = (edges_df["id"].max() if len(edges_df) else 0) + 1
             erow = {"id": int(new_eid), "from": int(frm), "to": int(to)}
-            st.session_state.edges = coerce_edges(pd.concat([edges_df, pd.DataFrame([erow])], ignore_index=True))
+            st.session_state.edges = coerce_edges(
+                pd.concat([edges_df, pd.DataFrame([erow])], ignore_index=True)
+            )
             st.toast(f"Edge added: {id_to_label.get(frm, frm)} → {id_to_label.get(to, to)}")
     else:
         st.info("Add nodes first.")
