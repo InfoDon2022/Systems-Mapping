@@ -188,11 +188,9 @@ PERFORMANCE_MEASURES: List[Dict[str, Any]] = [
 # directions (Community Prevention, Treatment & Crisis, Postvention & Recovery,
 # Data/Research, Equity & Inclusion).
 STAGE_COLORS = {
-    1: "#2E7D32",  # Community Prevention & Awareness (green)
-    2: "#C62828",  # Treatment & Crisis Services (red)
-    3: "#6A1B9A",  # Postvention & Recovery (purple)
-    4: "#1565C0",  # Data, Quality & Research (blue)
-    5: "#FF8F00",  # Equity & Inclusion (orange)
+    1: "#C62828",  # Red
+    2: "#FDD835",  # Yellow
+    3: "#2E7D32",  # Green
 }
 DEFAULT_NODE_SIZE = 20
 
@@ -209,8 +207,8 @@ if "nodes" not in st.session_state:
             {"id": 4, "label": "Peer Support Group", "stage": 3},
             {"id": 5, "label": "School & Youth Programs", "stage": 1},
             {"id": 6, "label": "Primary Care Clinic", "stage": 2},
-            {"id": 7, "label": "Public Health Data Team", "stage": 4},
-            {"id": 8, "label": "LGBTQ+ Safe Space", "stage": 5},
+            {"id": 7, "label": "Public Health Data Team", "stage": 1},
+            {"id": 8, "label": "LGBTQ+ Safe Space", "stage": 1},
         ]
     )
 if "edges" not in st.session_state:
@@ -327,7 +325,7 @@ def render_network(nodes: pd.DataFrame, edges: pd.DataFrame):
         },
         "edges": {"arrows": {"to": {"enabled": True}}, "smooth": False},
         "interaction": {"hover": True},
-        "manipulation": {"enabled": False},
+        "manipulation": {"enabled": true},
         "physics": {"enabled": True},
     }
     net.set_options(json.dumps(vis_options))
@@ -392,6 +390,19 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
+# ------------------------- BRANDING (Strategraph) -------------------------
+cA, cB = st.columns([4, 1])
+with cB:
+    try:
+        st.image("assets/logo_network_transparent.png", use_container_width=True)
+    except Exception:
+        try:
+            st.image("assets/logo_transparent_background.png", use_container_width=True)
+        except Exception:
+            pass
+st.markdown("<div style='text-align:right; font-weight:600;'>Strategraph</div>", unsafe_allow_html=True)
+
+
 # ------------------------- SIDEBAR CONTROLS -------------------------
 st.sidebar.markdown("## Workshop Controls")
 
@@ -427,7 +438,7 @@ with st.sidebar.expander("Add Node", expanded=False):
     new_label = st.text_input("Label", "New Partner/Step")
     new_stage = st.selectbox(
         "Stage (color)",
-        options=[1, 2, 3, 4, 5],
+        options=[1, 2, 3],
         index=0,
         help="Maps to color categories in legend",
     )
@@ -447,21 +458,25 @@ with st.sidebar.expander("Add Node", expanded=False):
         st.session_state.nodes = coerce_nodes(pd.concat([nodes_df, pd.DataFrame([row])], ignore_index=True))
         st.toast("Node added")
 
+
 with st.sidebar.expander("Add Edge", expanded=False):
-    node_ids = st.session_state.nodes["id"].astype(int).tolist()
-    if node_ids:
-        frm = st.selectbox("From", node_ids, key="edge_from")
-        to = st.selectbox("To", node_ids, key="edge_to")
+    nodes_df_for_edge = st.session_state.nodes.copy()
+    if not nodes_df_for_edge.empty:
+        id_to_label = {int(r["id"]): str(r["label"]) for _, r in nodes_df_for_edge.iterrows()}
+        node_ids = list(id_to_label.keys())
+        frm = st.selectbox("From", node_ids, key="edge_from", format_func=lambda i: id_to_label.get(i, str(i)))
+        to = st.selectbox("To", node_ids, key="edge_to", format_func=lambda i: id_to_label.get(i, str(i)))
         if st.button("➕ Add Edge"):
             edges_df = st.session_state.edges
             new_eid = (edges_df["id"].max() if len(edges_df) else 0) + 1
             erow = {"id": int(new_eid), "from": int(frm), "to": int(to)}
             st.session_state.edges = coerce_edges(pd.concat([edges_df, pd.DataFrame([erow])], ignore_index=True))
-            st.toast("Edge added")
+            st.toast(f"Edge added: {id_to_label.get(frm, frm)} → {id_to_label.get(to, to)}")
     else:
         st.info("Add nodes first.")
 
 with st.sidebar.expander("Performance Dashboard", expanded=False):
+ expanded=False):
     st.markdown("### County Performance Assessment")
     st.caption(
         "Enter the current count for each measure below.  The app will compare your county’s progress against the statewide targets from Vermont’s suicide prevention plan and assign a color‑coded grade."
@@ -587,4 +602,4 @@ with edges_tab:
             st.error(f"Edge update failed: {e}")
 
 # Footer
-st.caption("© Vermont Suicide Prevention systems mapping tool.  Built for county meetings to identify gaps and align with the state plan.")
+st.caption("© Strategraph LLC")
