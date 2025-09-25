@@ -396,7 +396,7 @@ with st.sidebar:
         st.image(_LOGO_PATH, use_container_width=True)
     # Optional caption under the image
     st.markdown(
-        "<div style='text-align:center; font-weight:600; letter-spacing:0.06em; margin-top:4px;'>STRATEGRAPH&nbsp;LLC</div>",
+        "<div style='text-align:center; font-weight:600; letter-spacing:0.06em; margin-top:4px;'></div>",
         unsafe_allow_html=True,
     )
 
@@ -414,19 +414,6 @@ st.markdown(
     """,
     unsafe_allow_html=True,
 )
-
-# ------------------------- BRANDING (Strategraph) -------------------------
-cA, cB = st.columns([4, 1])
-with cB:
-    try:
-        st.image("assets/logo_network_transparent.png", use_container_width=True)
-    except Exception:
-        try:
-            st.image("assets/logo_transparent_background.png", use_container_width=True)
-        except Exception:
-            pass
-st.markdown("<div style='text-align:right; font-weight:600;'>Strategraph</div>", unsafe_allow_html=True)
-
 
 # ------------------------- SIDEBAR CONTROLS -------------------------
 st.sidebar.markdown("## Workshop Controls")
