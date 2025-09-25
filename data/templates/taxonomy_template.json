@@ -1,48 +1,148 @@
 {
   "systems": [
-    { "key": "Individual",                 "color": "#666666" },
-    { "key": "Education",                  "color": "#FF9900" },
-    { "key": "System",                     "color": "#999999" },
-    { "key": "Service",                    "color": "#1F77B4" },
-    { "key": "Justice",                    "color": "#8C564B" },
-    { "key": "Faith",                      "color": "#9467BD" },
-    { "key": "Law Enforcement",            "color": "#B5651D" },
-    { "key": "Healthcare",                 "color": "#2CA02C" },
-    { "key": "Language Access",            "color": "#17BECF" },
-    { "key": "Hotline/Navigation",         "color": "#7F7F7F" },
-    { "key": "Prosecution",                "color": "#D62728" },
-    { "key": "Courts",                     "color": "#BCBD22" },
-    { "key": "Forensic/SANE",              "color": "#1F77B4" },
-    { "key": "Behavioral Health",          "color": "#2CA02C" },
-    { "key": "Housing/Shelter",            "color": "#FF7F0E" },
-    { "key": "Advocacy",                   "color": "#9467BD" },
-    { "key": "Community-Based Org",        "color": "#8C564B" },
-    { "key": "Child/Youth Services",       "color": "#17BECF" },
-    { "key": "Corrections/Probation/Parole","color": "#7F7F7F" },
-    { "key": "Legal Aid/Civil",            "color": "#D62728" },
-    { "key": "Tribal Government/Programs", "color": "#2CA02C" },
-    { "key": "Faith-Based Org",            "color": "#9467BD" },
-    { "key": "Transportation",             "color": "#BCBD22" },
-    { "key": "Interpreter/Language Access","color": "#17BECF" }
+    {
+      "key": "Community Prevention",
+      "color": "#4E79A7"
+    },
+    {
+      "key": "Treatment & Crisis",
+      "color": "#F28E2B"
+    },
+    {
+      "key": "Primary Care & BH",
+      "color": "#59A14F"
+    },
+    {
+      "key": "Postvention",
+      "color": "#E15759"
+    },
+    {
+      "key": "Lethal Means Safety",
+      "color": "#76B7B2"
+    },
+    {
+      "key": "Data & QI",
+      "color": "#EDC948"
+    },
+    {
+      "key": "Peer & Lived Experience",
+      "color": "#B07AA1"
+    },
+    {
+      "key": "Hotline/Navigation",
+      "color": "#FF9DA7"
+    },
+    {
+      "key": "Faith & Community Support",
+      "color": "#9C755F"
+    },
+    {
+      "key": "Education/Youth",
+      "color": "#8CD17D"
+    },
+    {
+      "key": "Law Enforcement",
+      "color": "#B6992D"
+    },
+    {
+      "key": "Other",
+      "color": "#7F7F7F"
+    }
   ],
   "synonyms": {
-    "Law Enforcement": ["Police", "Sheriff", "PD", "Constable", "State Police"],
-    "Prosecution": ["DA", "District Attorney", "Prosecutor", "County Attorney", "City Attorney"],
-    "Courts": ["Court", "Family Court", "Municipal Court", "Magistrate", "Tribal Court"],
-    "Forensic/SANE": ["SANE", "SAFE", "Forensic Nurse", "Forensic Examiner", "SART Hospital"],
-    "Healthcare": ["Hospital", "Clinic", "ED", "ER", "Health Center"],
-    "Behavioral Health": ["Mental Health", "Counseling", "Substance Use", "Substance Abuse", "Therapy"],
-    "Housing/Shelter": ["Shelter", "Transitional Housing", "DV Shelter", "Emergency Housing"],
-    "Advocacy": ["Rape Crisis", "DV Program", "Victim Services", "Victim Advocate", "Coalition"],
-    "Community-Based Org": ["CBO", "Nonprofit", "Community Partner"],
-    "Child/Youth Services": ["CPS", "Child Protective Services", "Youth Program", "CAC", "Children's Advocacy Center"],
-    "Corrections/Probation/Parole": ["Probation", "Parole", "Jail", "Prison", "DOC", "Community Corrections"],
-    "Legal Aid/Civil": ["Legal Aid", "Civil Legal", "Legal Services", "Victim Legal"],
-    "Tribal Government/Programs": ["Tribal Program", "Tribal Gov", "Village Public Safety Officer", "VPSO"],
-    "Faith-Based Org": ["Church", "Synagogue", "Mosque", "Temple", "Faith Partner"],
-    "Hotline/Navigation": ["Hotline", "2-1-1", "Navigation", "Navigator"],
-    "Transportation": ["Transit", "Taxi", "Ride Share", "Van Service"],
-    "Interpreter/Language Access": ["Interpreter", "Language Services", "LEP Support"]
+    "Community Prevention": [
+      "Prevention",
+      "Gatekeeper Training",
+      "QPR",
+      "ASIST",
+      "YMHFA",
+      "Coalition",
+      "Upstream"
+    ],
+    "Treatment & Crisis": [
+      "Crisis",
+      "Mobile Crisis",
+      "988 Center",
+      "Crisis Stabilization",
+      "Crisis Residential",
+      "ED Psych",
+      "Walk-in Clinic"
+    ],
+    "Primary Care & BH": [
+      "Primary Care",
+      "PCP",
+      "FQHC",
+      "Integrated Care",
+      "Behavioral Health",
+      "Outpatient Clinic",
+      "Tele-BH"
+    ],
+    "Postvention": [
+      "LOSS Team",
+      "Loss Team",
+      "Grief Support",
+      "Survivors of Suicide Loss",
+      "Bereavement",
+      "Postvention Team"
+    ],
+    "Lethal Means Safety": [
+      "Lethal Means",
+      "Firearm Safety",
+      "Safe Storage",
+      "Lock Distribution",
+      "CALM",
+      "ED-CALM"
+    ],
+    "Data & QI": [
+      "Data",
+      "Public Health",
+      "Epidemiology",
+      "QI",
+      "Quality Improvement",
+      "SMR",
+      "Suicide Mortality Review",
+      "Surveillance"
+    ],
+    "Peer & Lived Experience": [
+      "Peer Support",
+      "Certified Peer",
+      "Lived Experience",
+      "Warmline",
+      "Recovery"
+    ],
+    "Hotline/Navigation": [
+      "988",
+      "Lifeline",
+      "Warm Line",
+      "Navigation",
+      "211",
+      "Help Line",
+      "Care Navigation"
+    ],
+    "Faith & Community Support": [
+      "Faith-Based",
+      "Church",
+      "Synagogue",
+      "Mosque",
+      "Temple",
+      "Community Group",
+      "Chaplain"
+    ],
+    "Education/Youth": [
+      "School",
+      "School Counselor",
+      "School Psych",
+      "Campus",
+      "College",
+      "Youth Program"
+    ],
+    "Law Enforcement": [
+      "Police",
+      "Sheriff",
+      "State Police",
+      "CIT",
+      "Co-Responder"
+    ]
   },
   "relationship_types": [
     "referral",
