@@ -325,7 +325,7 @@ def render_network(nodes: pd.DataFrame, edges: pd.DataFrame):
         },
         "edges": {"arrows": {"to": {"enabled": True}}, "smooth": False},
         "interaction": {"hover": True},
-        "manipulation": {"enabled": true},
+        "manipulation": {"enabled": True},
         "physics": {"enabled": True},
     }
     net.set_options(json.dumps(vis_options))
@@ -482,7 +482,6 @@ with st.sidebar.expander("Add Edge", expanded=False):
         st.info("Add nodes first.")
 
 with st.sidebar.expander("Performance Dashboard", expanded=False):
- expanded=False):
     st.markdown("### County Performance Assessment")
     st.caption(
         "Enter the current count for each measure below.  The app will compare your county’s progress against the statewide targets from Vermont’s suicide prevention plan and assign a color‑coded grade."
@@ -582,7 +581,7 @@ with nodes_tab:
         nodes_df,
         num_rows="dynamic",
         use_container_width=True,
-        column_config={"stage": st.column_config.NumberColumn(help="1–5 color category")},
+        column_config={"stage": st.column_config.NumberColumn(help="1–3 color category")},
         key="nodes_editor",
     )
     if st.button("💾 Apply node edits"):
