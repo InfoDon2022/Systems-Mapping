@@ -3,11 +3,11 @@
     "default_rural_threshold_miles": 30
   },
   "service_thresholds_miles": {
-    "forensic_exam": 60,
-    "advocacy": 40,
-    "counseling": 40,
-    "shelter": 50,
-    "legal": 60
+    "crisis_response": 30,
+    "outpatient_care": 40,
+    "inpatient_stabilization": 60,
+    "lethal_means_counseling": 40,
+    "peer_support": 40
   },
   "vignette_matching": {
     "min_score": 70

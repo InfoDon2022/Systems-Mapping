@@ -1,13 +1,11 @@
 node_id,label,system_type,notes
-1,Survivor,Individual,
-2,Teacher,Education,
-3,CPS,System,
-4,Advocacy Org,Service,
-5,Court,Justice,
-6,Chaplain,Faith,
-7,Military Police,Law Enforcement,
-8,Tribal Advocate,Service,
-9,Regional Hospital,Healthcare,
-10,Interpreter Service,Language Access,
-11,SANE Program,Healthcare,
-12,Hotline/Navigation,Hotline/Navigation,
+n_988,State 988 Center,Hotline/Navigation,"24/7 call, text, chat"
+n_mc1,County Mobile Crisis Team,Treatment & Crisis,Mobile response and stabilization
+n_cc1,Crisis Clinic,Treatment & Crisis,Same-day crisis evals
+n_pc1,FQHC Primary Care,Primary Care & BH,Screening + warm handoffs
+n_sch1,High School Counseling,Education/Youth,School risk ID and referral
+n_peer,Peer Support Group,Peer & Lived Experience,Survivors of suicide loss + lived experience
+n_loss,LOSS Team,Postvention,Postvention outreach
+n_lm1,Safe Storage Partner,Lethal Means Safety,Firearm retailers / law enforcement lockers
+n_nav,Care Navigation Hub,Hotline/Navigation,Non-crisis navigation (211)
+n_faith,Faith & Community Partner,Faith & Community Support,Community-based support
